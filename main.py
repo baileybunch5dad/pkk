@@ -31,6 +31,23 @@ def render_ctof_result():
 def render_ftoc():
     return render_template("ftoc.html")
 
+def sort_strings(a,b,c):
+  list_of_strings = [a,b,c]
+  list_of_strings.sort()
+  return list_of_strings
+
+@app.route("/sort")
+def render_sort():
+    return render_template("sort.html")
+
+@app.route('/sort_result')
+def render_sort_result():
+      a = request.args['a']
+      b = request.args['b']
+      c = request.args['c']
+      result_as_list = sort_strings(a,b,c)
+      return render_template('sort_result.html',
+                              result = str(result_as_list))
 
 @app.route('/ftoc_result')
 def render_ftoc_result():

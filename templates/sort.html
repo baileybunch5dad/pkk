@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Sort three strings{% endblock %}
+
+{% block content %}
+
+<p>Enter three strings, and I'll sort them</p>
+
+<form action="/sort_result">
+  <p>String 1: <input type="text" name="a" value=""> </p>
+  <p>String 2: <input type="text" name="b" value=""> </p>
+  <p>String 3: <input type="text" name="c" value=""> </p>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
